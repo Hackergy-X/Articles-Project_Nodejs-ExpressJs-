@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
-    "watch": "nodemon --ext js,ejs --ignore public"
+    "watch": "nodemon --ext js,ejs --ignore public",
+    "postinstall": "ng build"
   },
   "author": "OmarGhieh",
   "license": "ISC",
