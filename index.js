@@ -29,8 +29,8 @@ const mongoose = require('mongoose');
  
 mongoose.connect("mongodb+srv://Articles:123@cluster0.tlqkgvd.mongodb.net/all-data?retryWrites=true&w=majority")
   .then( result => {
-    app.listen(process.env.PORT  || 5000, () => {
-      console.log("Example app listening at http://localhost:5000");
+    app.listen(process.env.PORT  || 3000, () => {
+      console.log("Example app listening at http://localhost:3000");
     });
     })
   .catch( err => {
