@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('./partials/head.ejs'); %>
+
+<body>
+    <%- include('./partials/header.ejs');  %>
+
+    <h1><%= ArrDetails.title %></h1>
+    <div style="display: flex; text-align: center; justify-content: center;
+    ">
+        <p style="margin: 5em; width: 650px; 
+        height: 200px; background-color: rgb(95, 94, 94); color: white;
+        text-align: center; padding: 20px;
+        ">
+            <%= ArrDetails.body %>
+        </p>
+    </div>
+
+    <button data-linkid="<%= ArrDetails._id %>" class="create">
+        Delete this article
+    </button> 
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <%- include('./partials/footer.ejs'); %>
+
+
+    <script>
+        const btnelement=document.querySelector(".create")
+        const articleId=btnelement.getAttribute("data-linkid");
+      
+      
+        // what is data ?
+        // answerrrrrrrrrrrrrrrrrr
+      
+      
+        btnelement.addEventListener("click", (eo)=> {
+      
+        fetch(`/all-articles/${ articleId}`, { method: "DELETE" } )
+        .then((response)=> response.json())
+        .then((data)=> window.location.href=data.mylink )
+        .catch((err)=> {
+        console.log(err);
+        } );
+      
+        } )
+      </script>
+</body>
+</html>
